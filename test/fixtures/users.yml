@@ -2,14 +2,4 @@
 
 one:
   name: MyString
-<<<<<<< HEAD
-
-two:
-  name: MyString
-=======
   email: MyString
-
-two:
-  name: MyString
-  email: MyString
->>>>>>> models_and_migrations
