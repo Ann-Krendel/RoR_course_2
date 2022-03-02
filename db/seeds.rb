@@ -19,25 +19,25 @@ user_bob = User.find_or_create_by!(name: 'Bob', email: 'bob@gmail.com')
 user_carry = User.find_or_create_by!(name: 'Carry', email: 'carry@gmail.com')
 
 # Тесты
-test_html = Test.create!(title: 'HTML5') do |test|
+test_html = Test.find_or_create_by!(title: 'HTML5') do |test|
   test.level = 0
   test.category_id = category_frontend.id
   test.author_id = user_ann.id
 end
 
-test_sql = Test.create!(title: 'SQL') do |test|
+test_sql = Test.find_or_create_by!(title: 'SQL') do |test|
   test.level = 1
   test.category_id = category_databases.id
   test.author_id = user_bob.id
 end
 
-test_ruby = Test.create!(title: 'Ruby') do |test|
+test_ruby = Test.find_or_create_by!(title: 'Ruby') do |test|
   test.level = 2
   test.category_id = category_backend.id
   test.author_id = user_bob.id
 end
 
-test_python = Test.create!(title: 'Python') do |test|
+test_python = Test.find_or_create_by!(title: 'Python') do |test|
   test.level = 2
   test.category_id = category_backend.id
   test.author_id = user_carry.id
