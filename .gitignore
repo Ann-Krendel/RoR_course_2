@@ -34,12 +34,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-<<<<<<< HEAD
 /vendor/bundle/*
-
-/Gemfile.lock
-=======
-/Gemfile.lock
-
-/vendor/*
->>>>>>> models_and_migrations
