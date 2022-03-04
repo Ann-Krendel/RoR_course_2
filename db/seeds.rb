@@ -9,9 +9,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Категории
-category_backend = Category.find_or_create_by!(title: 'Backend')
-category_frontend = Category.find_or_create_by!(title: 'Frontend')
-category_databases = Category.find_or_create_by!(title: 'Databases')
+categories = Category.find_or_create_by!([{ title: 'Backend' }, { title: 'Frontend' }, { title: 'Databases' }])
 
 # Пользователи
 user_ann = User.find_or_create_by!(name: 'Ann', email: 'ann@gmail.com')
@@ -21,25 +19,25 @@ user_carry = User.find_or_create_by!(name: 'Carry', email: 'carry@gmail.com')
 # Тесты
 test_html = Test.find_or_create_by!(title: 'HTML5') do |test|
   test.level = 0
-  test.category_id = category_frontend.id
+  test.category_id = categories.second.id
   test.author_id = user_ann.id
 end
 
 test_sql = Test.find_or_create_by!(title: 'SQL') do |test|
   test.level = 1
-  test.category_id = category_databases.id
+  test.category_id = categories.third.id
   test.author_id = user_bob.id
 end
 
 test_ruby = Test.find_or_create_by!(title: 'Ruby') do |test|
   test.level = 2
-  test.category_id = category_backend.id
+  test.category_id = categories.first.id
   test.author_id = user_bob.id
 end
 
 test_python = Test.find_or_create_by!(title: 'Python') do |test|
   test.level = 2
-  test.category_id = category_backend.id
+  test.category_id = categories.first.id
   test.author_id = user_carry.id
 end
 
